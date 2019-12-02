@@ -6,7 +6,6 @@ import java.io.IOException;
 
 class Main {
   public static void main(String[] args) throws IOException, FileNotFoundException {
-    System.out.println("Hello world!");;
     System.out.println(calculateFuelReqts(new FileReader("./input.txt")));
   }
 
