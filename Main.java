@@ -17,8 +17,15 @@ class Main {
       reader = new BufferedReader(inputFile);
       String newLine = reader.readLine();
       while(newLine != null){
-        Integer currentFuelRequired = ((int)Math.floor( Integer.valueOf(newLine)/3 )) - 2;
-        sumOfAllFuelReqts += currentFuelRequired;
+        Integer totalFuelForCurrentModule = 0;
+        Integer currentFuelRequired = Integer.valueOf(newLine);
+        while(currentFuelRequired >= 0){
+          currentFuelRequired = ((int)Math.floor( Integer.valueOf(currentFuelRequired)/3 )) - 2;
+          if(currentFuelRequired > 0)
+            totalFuelForCurrentModule += currentFuelRequired;  
+        }
+        
+        sumOfAllFuelReqts += totalFuelForCurrentModule;
 
         newLine = reader.readLine();
       }
