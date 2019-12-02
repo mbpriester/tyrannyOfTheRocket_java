@@ -18,9 +18,7 @@ class Main {
       reader = new BufferedReader(inputFile);
       String newLine = reader.readLine();
       while(newLine != null){
-        System.out.println("new Line: " +newLine);
-        Integer mass = Integer.valueOf(newLine);
-        Integer currentFuelRequired = ((int)Math.floor( mass/3 )) - 2;
+        Integer currentFuelRequired = ((int)Math.floor( Integer.valueOf(newLine)/3 )) - 2;
         sumOfAllFuelReqts += currentFuelRequired;
 
         newLine = reader.readLine();
